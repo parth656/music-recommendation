@@ -7,7 +7,7 @@ REQUIRED INSTALLS:
 
 INSTALLATION OPTIONS:
 - Download the the code available at github.com/wpalin15/MUSEEK
-- git clone https://github.com/wpalin15/MUSEEK.git
+- git clone https://github.com/parth656/music-recommendation.git
 
 HOW TO RUN:
 - Ensure that you have a museek.py file, a templates folder, and a static folder.
