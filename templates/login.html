@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title>Music Discovery Website</title>
+     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/loginstyle.css') }}">
+     <meta charset="utf-8">
+   </head>
+   <body>
+     <div class="box">
+       <a onclick="window.location.href='https://accounts.spotify.com/en/logout?continue=https:%2F%2Faccounts.spotify.com%2Fauthorize%2F%3Fresponse_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252F127.0.0.1%253A8080%252Fcallback%252Fq%26scope%3Duser-read-recently-played%2520playlist-modify-public%2520playlist-modify-private%26client_id%3Da5618cb6512944f884284860712a9b26'"><input type="submit" name="login" value="Login With Spotify" /></a>
+       <a href="https://www.spotify.com/us/signup/"><input type="submit" name="create" value="Create Spotfiy Account" /></a>
+     </div>
+   </body>
+</html>

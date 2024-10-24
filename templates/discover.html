@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <style>
+input[type=text], select {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  -webkit-transition: width 0.1s ease-in-out;
+  transition: width 0.1s ease-in-out;
+}
+input[type=text]:focus {
+  width: 80%;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 15px
+  border: none;
+  border-radius: 7px;
+  font-size:18px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #272727;
+}
+
+</style>
+   <head>
+      <meta charset="utf-8">
+      <title>Music Discovery Website</title>
+   </head>
+   <body>
+       {% extends "template.html" %}
+       {% block content %}
+       <h1> {{rec_header}}</h1>
+      {% for key in sorted_array.keys()%}
+      <iframe src="https://open.spotify.com/embed/track/{{sorted_array[key][0]}}" width="290" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      {% endfor %}
+      <p> {{error_message}} </p>
+      
+      <h1>Create Your Own Recommendations</h1>
+       <div>
+      <form method="post">
+          <label style="font-size:21px;">Song: (Required)</label>
+          <input type="text" name="song_name" onsubmit="return false" required><br>
+          <label style="font-size:21px;">Genre: (Optional)</label>
+          <input type="text" name="genre" onsubmit="return false"><br>
+          <label style="font-size:21px;">Popularity: (Optional)</label>
+          <input type="number" step=0.1 min=0 max=10 name="popularity" onsubmit="return false" placeholder="(1-10)"><br>
+          <label style="font-size:21px;">Length: (Optional)</label>
+          <input type="number" step=1 min=0 name="length" onsubmit="return false" placeholder="seconds"><br>
+          <label style="font-size:21px;">Acousticness: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="acousticness" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Tempo: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="tempo" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Danceability: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="danceability" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Energy: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="energy" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Instrumentalness: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="instrumentalness" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Key: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="key" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Liveness: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="liveness" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Loudness: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="loudness" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Speechiness: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="speechiness" onsubmit="return false" placeholder="(0-1)"><br>
+          <label style="font-size:21px;">Valence: (Optional)</label>
+          <input type="number" step=0.01 min=0 max=1 name="valence" onsubmit="return false" placeholder="(0-1)"><br>
+          <input type="submit" name="submit" value="Submit" >
+      </form>
+       </div>
+       {% endblock %}
+
+   </body>
+</html>

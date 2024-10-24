@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Music Discovery Website</title>
+   </head>
+   </style>
+   <body>
+       {% extends "template.html" %}
+       {% block content %}
+       {% for item in sorted_array%}
+      <h1>Recommendations: {{item}}</h1>
+       {% for key in sorted_array[item].keys()%}
+      <iframe src="https://open.spotify.com/embed/track/{{sorted_array[item][key][0]}}" width="290" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      {% endfor %}
+      {% endfor %}
+      {% endblock %}
+   </body>
+</html>
